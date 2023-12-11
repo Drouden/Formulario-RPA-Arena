@@ -1,0 +1,374 @@
+﻿<process name="sin mirar" version="1.0" bpversion="7.2.1.7446" narrative="" byrefcollection="true" processrunningmessage="" disableversioning="false" preferredid="a22e35e0-100d-4587-8211-58894fb11bb7">
+  <view>
+    <camerax>0</camerax>
+    <cameray>-3</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="74150016-2458-4555-a927-d4ae3583bf01" type="Normal" published="False">
+    <name>1.Email</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="e83c7314-85c6-42ac-bbcb-f8fa031f3c04" type="Normal" published="False">
+    <name>2.Email</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="0026fa2d-008a-486d-95b6-9243811e5e2b" type="Normal" published="False">
+    <name>3.Email</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="cfad5954-3a1f-49a0-8e29-aeaa5161ef40" name="Start" type="Start">
+    <display x="-120" y="-210" />
+    <onsuccess>31c253fc-8300-4c86-9739-24b06b8c2440</onsuccess>
+  </stage>
+  <stage stageid="c5d5f759-348b-4e1d-894e-72acedbcce51" name="End" type="End">
+    <display x="60" y="45" />
+  </stage>
+  <stage stageid="9c272f80-3a42-4660-a21f-b8df0be4720c" name="Stage1" type="ProcessInfo">
+    <display x="-315" y="-225" w="150" h="90" />
+  </stage>
+  <stage stageid="edaf3477-ea39-49e5-b229-f3ff09e221c5" name="Decision1" type="Decision">
+    <display x="-120" y="-15" />
+    <decision expression="[Exists] = True" />
+    <ontrue>ee223a6f-b2bc-43f7-adcc-74f90542e166</ontrue>
+    <onfalse>d1b05d46-763c-4f63-917d-2bea56c22317</onfalse>
+  </stage>
+  <stage stageid="558d28d8-75da-4469-be82-b01578d1643f" name="End" type="End">
+    <display x="60" y="-15" />
+  </stage>
+  <stage stageid="2e8fa0de-0673-4472-9a6e-19469386e774" name="Archivo existe" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="-120" y="-75" />
+    <inputs>
+      <input type="text" name="File Name" friendlyname="File Name" narrative="The name of the file to check" expr="&quot;C:\Users\Drouden\Desktop\Descarga\ArenaRPA_FormData.xlsx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Exists" friendlyname="Exists" narrative="True if the file exists" stage="Exists" />
+    </outputs>
+    <onsuccess>edaf3477-ea39-49e5-b229-f3ff09e221c5</onsuccess>
+    <resource object="Utility - File Management" action="File Exists" />
+  </stage>
+  <stage stageid="4ceb8cfc-2292-4181-bb34-68aeb8ee8da0" name="Exists" type="Data">
+    <display x="-330" y="-90" w="120" h="60" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="260ed72d-be06-458e-9249-ba9130b967c8" name="1.Email" type="SubSheetInfo">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <display x="-195" y="-195" w="180" h="90" />
+  </stage>
+  <stage stageid="a1a97f73-9804-4ccb-a218-a44370ab0aba" name="End" type="End">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <display x="15" y="120" />
+  </stage>
+  <stage stageid="ee223a6f-b2bc-43f7-adcc-74f90542e166" name="Formulario::Formulario" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="-120" y="45" />
+    <onsuccess>5845734f-bc0e-4a46-aa89-f9fbad3252f1</onsuccess>
+    <resource object="Formulario" action="Formulario" />
+  </stage>
+  <stage stageid="6e0be441-aa2c-4521-90a3-08d0b159c7d1" name="Block1" type="Block">
+    <loginhibit onsuccess="true" />
+    <display x="-420" y="-165" w="195" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="9b32cf5a-0f8f-4ca5-b666-3293e4244976" name="Start" type="Start">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <display x="15" y="-210" />
+    <onsuccess>8e9b841f-61b7-43e0-8ced-f106d9fe2bb7</onsuccess>
+  </stage>
+  <stage stageid="8e9b841f-61b7-43e0-8ced-f106d9fe2bb7" name="Configurar" type="Action">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-165" />
+    <inputs>
+      <input type="text" name="Username" friendlyname="Username" narrative="The POP3 and SMTP Username" expr="[Usuario]" />
+      <input type="password" name="Password" friendlyname="Password" narrative="The POP3 and SMTP Password" expr="[Contraseña]" />
+      <input type="text" name="POP3 Server" friendlyname="POP3 Server" narrative="The POP3 Server address e.g. pop.domain.com" expr="&quot;pop.gmail.com&quot;" />
+      <input type="text" name="SMTP Server" friendlyname="SMTP Server" narrative="The SMTP Server address e.g. smtp.domain.com" expr="&quot;smtp.gmail.com&quot;" />
+      <input type="number" name="POP3 Port" friendlyname="POP3 Port" narrative="The POP3 Port, e.g. 110 or 995" expr="995" />
+      <input type="number" name="SMTP Port" friendlyname="SMTP Port" narrative="The SMTP Port, e.g 25 or 465" expr="587" />
+      <input type="flag" name="POP3 UseSSL" friendlyname="POP3 UseSSL" narrative="Whether to use SSL for POP3" expr="True" />
+      <input type="flag" name="SMTP UseSSL" friendlyname="SMTP UseSSL" narrative="Whether to use SSL for SMTP" expr="True" />
+    </inputs>
+    <onsuccess>5142d49e-690c-424a-89a2-4ddbc2187ea0</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Configure" />
+  </stage>
+  <stage stageid="5142d49e-690c-424a-89a2-4ddbc2187ea0" name="listar" type="Action">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-120" />
+    <outputs>
+      <output type="collection" name="Emails" friendlyname="Emails" stage="Emails" />
+    </outputs>
+    <onsuccess>ca5c0e62-4111-4ddb-885a-293e8a2f8a7a</onsuccess>
+    <resource object="Email - POP3/SMTP" action="List Messages" />
+  </stage>
+  <stage stageid="59437fa3-86e4-4fd1-84c3-9982be14c55e" name="Leer emails" type="Action">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="text" name="MessageID" friendlyname="MessageID" narrative="The ID of the message to retrieve." expr="[Emails.MessageID]" />
+      <input type="flag" name="HTMLPreferred" friendlyname="HTMLPreferred" narrative="Return HTML content in preference to plain text (multipart messages only)" expr="False" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Body" friendlyname="Body" narrative="The email body" stage="Body" />
+      <output type="text" name="Content-Type" friendlyname="Content-Type" narrative="The content type of the returned body (e.g. text/plain)" stage="Content-Type" />
+    </outputs>
+    <onsuccess>6c18f9c9-a0bf-4d87-95a0-fc03b601a7e3</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Get Message" />
+  </stage>
+  <stage stageid="6c18f9c9-a0bf-4d87-95a0-fc03b601a7e3" name="Adjuntos" type="Action">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="15" />
+    <inputs>
+      <input type="text" name="MessageID" friendlyname="MessageID" narrative="The ID of the email message." expr="[Emails.MessageID]" />
+      <input type="text" name="Folder" friendlyname="Folder" narrative="A Folder in which to save all the attachments." expr="&quot;C:\Users\Drouden\Desktop\Descarga&quot;" />
+    </inputs>
+    <onsuccess>82eaef10-127c-427f-8fdd-7902f9ca57fe</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Save Attachments" />
+  </stage>
+  <stage stageid="ca5c0e62-4111-4ddb-885a-293e8a2f8a7a" name="Loop Start1" type="LoopStart">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-75" />
+    <onsuccess>59437fa3-86e4-4fd1-84c3-9982be14c55e</onsuccess>
+    <groupid>0c2d6784-2090-4e97-81e8-bca1b758e693</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Emails</loopdata>
+  </stage>
+  <stage stageid="82eaef10-127c-427f-8fdd-7902f9ca57fe" name="Loop End1" type="LoopEnd">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="60" />
+    <onsuccess>a1a97f73-9804-4ccb-a218-a44370ab0aba</onsuccess>
+    <groupid>0c2d6784-2090-4e97-81e8-bca1b758e693</groupid>
+  </stage>
+  <stage stageid="31c253fc-8300-4c86-9739-24b06b8c2440" name="1.Email" type="SubSheet">
+    <loginhibit onsuccess="true" />
+    <display x="-120" y="-150" />
+    <onsuccess>2e8fa0de-0673-4472-9a6e-19469386e774</onsuccess>
+    <processid>74150016-2458-4555-a927-d4ae3583bf01</processid>
+  </stage>
+  <stage stageid="9573de38-0024-4456-ad9c-02417688f8c4" name="Usuario" type="Data">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-240" y="-60" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">drouden@gmail.com</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7a99eda6-bd9b-45fd-b045-90e0f7dba5c9" name="Contraseña" type="Data">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-150" y="-60" w="90" h="30" />
+    <datatype>password</datatype>
+    <initialvalueenc>37,28,1,70,1,80,19,11,36,16,18,91,24,77,26,20</initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ceb9d465-ec88-493c-ae58-15f59305ed5a" name="Block2" type="Block">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-285" y="-105" w="180" h="210" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="8e61a73b-c470-4de6-a7f7-ea4ba0cc0f17" name="Emails" type="Collection">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <display x="-195" y="60" w="120" h="60" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Subject" type="text" description="The subject of the email." />
+      <field name="From Name" type="text" description="The name of the sender." />
+      <field name="From Address" type="text" description="The email address of the sender." />
+      <field name="Date Sent" type="datetime" description="The date and time at which the email was sent." />
+      <field name="MessageID" type="text" description="The ID of the email message." />
+    </collectioninfo>
+  </stage>
+  <stage stageid="12d8e6ef-b622-450f-aee2-a3ea6334482d" name="Content-Type" type="Data">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <display x="-150" y="0" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a9a115ca-30a0-4971-9f71-8455dde16cb6" name="Body" type="Data">
+    <subsheetid>74150016-2458-4555-a927-d4ae3583bf01</subsheetid>
+    <display x="-240" y="0" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="86ed225a-a475-455d-b7ed-4222fc5c42bc" name="2.Email" type="SubSheetInfo">
+    <subsheetid>e83c7314-85c6-42ac-bbcb-f8fa031f3c04</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="48553269-09e0-4d7d-9152-49a73469625b" name="Start" type="Start">
+    <subsheetid>e83c7314-85c6-42ac-bbcb-f8fa031f3c04</subsheetid>
+    <display x="15" y="-105" />
+    <onsuccess>bc0b066c-8c50-4a63-b38c-f482a26a1120</onsuccess>
+  </stage>
+  <stage stageid="284aeac9-e4c2-418b-9eee-add266f69669" name="End" type="End">
+    <subsheetid>e83c7314-85c6-42ac-bbcb-f8fa031f3c04</subsheetid>
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="bc0b066c-8c50-4a63-b38c-f482a26a1120" name="Configurar" type="Action">
+    <subsheetid>e83c7314-85c6-42ac-bbcb-f8fa031f3c04</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-60" />
+    <inputs>
+      <input type="text" name="Username" friendlyname="Username" narrative="The POP3 and SMTP Username" expr="[Usuario]" />
+      <input type="password" name="Password" friendlyname="Password" narrative="The POP3 and SMTP Password" expr="[Contraseña]" />
+      <input type="text" name="POP3 Server" friendlyname="POP3 Server" narrative="The POP3 Server address e.g. pop.domain.com" expr="&quot;pop.gmail.com&quot;" />
+      <input type="text" name="SMTP Server" friendlyname="SMTP Server" narrative="The SMTP Server address e.g. smtp.domain.com" expr="&quot;smtp.gmail.com&quot;" />
+      <input type="number" name="POP3 Port" friendlyname="POP3 Port" narrative="The POP3 Port, e.g. 110 or 995" expr="995" />
+      <input type="number" name="SMTP Port" friendlyname="SMTP Port" narrative="The SMTP Port, e.g 25 or 465" expr="587" />
+      <input type="flag" name="POP3 UseSSL" friendlyname="POP3 UseSSL" narrative="Whether to use SSL for POP3" expr="True" />
+      <input type="flag" name="SMTP UseSSL" friendlyname="SMTP UseSSL" narrative="Whether to use SSL for SMTP" expr="True" />
+    </inputs>
+    <onsuccess>9854ee15-4b04-4211-9bbf-7dc2ca2dd383</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Configure" />
+  </stage>
+  <stage stageid="9854ee15-4b04-4211-9bbf-7dc2ca2dd383" name="Enviar email" type="Action">
+    <subsheetid>e83c7314-85c6-42ac-bbcb-f8fa031f3c04</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="15" />
+    <inputs>
+      <input type="text" name="From" friendlyname="From" narrative="The email address of the sender." expr="[Usuario]" />
+      <input type="text" name="To" friendlyname="To" narrative="The email address of the recipient. To address multiple recipients use the format &quot;john.smith@example.com, henry.jones@example.com&quot; OR &quot;John Smith &lt;john.smith@example.com&gt;, Henry Jones &lt;henry.jones@example.com&gt;&quot;." expr="[Usuario]" />
+      <input type="text" name="Subject" friendlyname="Subject" narrative="The subject of the email." expr="&quot;Comprobacion&quot;" />
+      <input type="text" name="Body" friendlyname="Body" narrative="The body of the email." expr="&quot;Todo ha salido correctamente&quot;" />
+      <input type="collection" name="Attachments" friendlyname="Attachments" narrative="A Collection containing a list of files to add to the email as attachments." expr="" />
+      <input type="flag" name="BodyIsHTML" friendlyname="BodyIsHTML" narrative="Indicates if the body should be sent as HTML" expr="False" />
+    </inputs>
+    <onsuccess>284aeac9-e4c2-418b-9eee-add266f69669</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Send Message" />
+  </stage>
+  <stage stageid="15e2ea43-023c-4736-924d-acdc663d350e" name="3.Email" type="SubSheetInfo">
+    <subsheetid>0026fa2d-008a-486d-95b6-9243811e5e2b</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="b7927114-c48c-4d62-a2cd-d7ffe452200c" name="Start" type="Start">
+    <subsheetid>0026fa2d-008a-486d-95b6-9243811e5e2b</subsheetid>
+    <display x="15" y="-105" />
+    <onsuccess>3d3b58ab-0967-4108-8a76-4fe7474a7704</onsuccess>
+  </stage>
+  <stage stageid="40749314-af16-42fa-a67f-433e0f6d8325" name="End" type="End">
+    <subsheetid>0026fa2d-008a-486d-95b6-9243811e5e2b</subsheetid>
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="3d3b58ab-0967-4108-8a76-4fe7474a7704" name="Configurar" type="Action">
+    <subsheetid>0026fa2d-008a-486d-95b6-9243811e5e2b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="text" name="Username" friendlyname="Username" narrative="The POP3 and SMTP Username" expr="[Usuario]" />
+      <input type="password" name="Password" friendlyname="Password" narrative="The POP3 and SMTP Password" expr="[Contraseña]" />
+      <input type="text" name="POP3 Server" friendlyname="POP3 Server" narrative="The POP3 Server address e.g. pop.domain.com" expr="&quot;pop.gmail.com&quot;" />
+      <input type="text" name="SMTP Server" friendlyname="SMTP Server" narrative="The SMTP Server address e.g. smtp.domain.com" expr="&quot;smtp.gmail.com&quot;" />
+      <input type="number" name="POP3 Port" friendlyname="POP3 Port" narrative="The POP3 Port, e.g. 110 or 995" expr="995" />
+      <input type="number" name="SMTP Port" friendlyname="SMTP Port" narrative="The SMTP Port, e.g 25 or 465" expr="587" />
+      <input type="flag" name="POP3 UseSSL" friendlyname="POP3 UseSSL" narrative="Whether to use SSL for POP3" expr="True" />
+      <input type="flag" name="SMTP UseSSL" friendlyname="SMTP UseSSL" narrative="Whether to use SSL for SMTP" expr="True" />
+    </inputs>
+    <onsuccess>f32b4f0e-7c53-4e19-b202-f1db6e4c4e56</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Configure" />
+  </stage>
+  <stage stageid="f32b4f0e-7c53-4e19-b202-f1db6e4c4e56" name="Enviar email" type="Action">
+    <subsheetid>0026fa2d-008a-486d-95b6-9243811e5e2b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" />
+    <inputs>
+      <input type="text" name="From" friendlyname="From" narrative="The email address of the sender." expr="[Usuario]" />
+      <input type="text" name="To" friendlyname="To" narrative="The email address of the recipient. To address multiple recipients use the format &quot;john.smith@example.com, henry.jones@example.com&quot; OR &quot;John Smith &lt;john.smith@example.com&gt;, Henry Jones &lt;henry.jones@example.com&gt;&quot;." expr="[Usuario]" />
+      <input type="text" name="Subject" friendlyname="Subject" narrative="The subject of the email." expr="&quot;Comprobacion&quot;" />
+      <input type="text" name="Body" friendlyname="Body" narrative="The body of the email." expr="&quot;Todo se ha ido a la mierda&quot;" />
+      <input type="collection" name="Attachments" friendlyname="Attachments" narrative="A Collection containing a list of files to add to the email as attachments." expr="" />
+      <input type="flag" name="BodyIsHTML" friendlyname="BodyIsHTML" narrative="Indicates if the body should be sent as HTML" expr="False" />
+    </inputs>
+    <onsuccess>40749314-af16-42fa-a67f-433e0f6d8325</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Send Message" />
+  </stage>
+  <stage stageid="5845734f-bc0e-4a46-aa89-f9fbad3252f1" name="Enviar_correcto" type="SubSheet">
+    <loginhibit onsuccess="true" />
+    <display x="-30" y="45" />
+    <onsuccess>c5d5f759-348b-4e1d-894e-72acedbcce51</onsuccess>
+    <processid>e83c7314-85c6-42ac-bbcb-f8fa031f3c04</processid>
+  </stage>
+  <stage stageid="d1b05d46-763c-4f63-917d-2bea56c22317" name="Enviar_error" type="SubSheet">
+    <loginhibit onsuccess="true" />
+    <display x="-30" y="-15" />
+    <onsuccess>558d28d8-75da-4469-be82-b01578d1643f</onsuccess>
+    <processid>0026fa2d-008a-486d-95b6-9243811e5e2b</processid>
+  </stage>
+  <stage stageid="d001fc8a-e518-444c-8fb6-a0a5b867a809" name="Usuario" type="Data">
+    <subsheetid>e83c7314-85c6-42ac-bbcb-f8fa031f3c04</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-195" y="0" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">drouden@gmail.com</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2a9c8b32-7da6-48bc-9461-6f98e81fb0c9" name="Contraseña" type="Data">
+    <subsheetid>e83c7314-85c6-42ac-bbcb-f8fa031f3c04</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-195" y="45" w="90" h="30" />
+    <datatype>password</datatype>
+    <initialvalueenc>37,28,1,70,1,80,19,11,36,16,18,91,24,77,26,20</initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0d588e1e-aa18-4a0a-ad80-80bc9188b53a" name="Usuario" type="Data">
+    <subsheetid>0026fa2d-008a-486d-95b6-9243811e5e2b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-195" y="-15" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">drouden@gmail.com</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fe12fedd-a661-4fc3-98bc-e3207b3f4292" name="Contraseña" type="Data">
+    <subsheetid>0026fa2d-008a-486d-95b6-9243811e5e2b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-195" y="30" w="90" h="30" />
+    <datatype>password</datatype>
+    <initialvalueenc>37,28,1,70,1,80,19,11,36,16,18,91,24,77,26,20</initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="df503663-3746-426e-a9b1-c4ff4cb1ca45" name="Block3" type="Block">
+    <subsheetid>e83c7314-85c6-42ac-bbcb-f8fa031f3c04</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-255" y="-30" w="135" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="37d0515f-258b-4479-b322-1e4721799d2a" name="Block4" type="Block">
+    <subsheetid>0026fa2d-008a-486d-95b6-9243811e5e2b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+</process>
